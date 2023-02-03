@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>FirstName</th>
+    <th>Surname</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td th:text="${user.getId()}"/>
+    <td th:text="${user.getFirstName()}"/>
+    <td th:text="${user.getSurname()}"/>
+
+  </tr>
+  </tbody>
+</table>
+<a th:href="@{/{id}/edit(id=${user.getId()})}">Edit</a>
+
+<form th:method="DELETE" th:action="@{/{id}(id=${user.getId()})}">
+  <input type="submit" value="Delete"/>
+</form>
+</body>
+</html>
